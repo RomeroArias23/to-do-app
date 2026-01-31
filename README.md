@@ -3,8 +3,26 @@
 ---
 
 ## Overview
-Brief description of the project and its purpose. Explain why you built it and what you learned.
 
+- This Angular To-Do App is a personal portfolio project and my learning canvas for mastering modern Angular concepts. I built this project to consolidate my understanding of core Angular topics, including:
+
+- Standalone Components and modular architecture
+
+- Routing (nested routes, lazy loading)
+
+- Reactive Forms for task creation and editing
+
+- Services and Dependency Injection
+
+- HTTP Interceptors for authentication and error handling
+
+- RxJS streams and state management with Observables and Subjects
+
+- Signals for reactive state in Angular
+
+- SCSS Styling with modern design patterns
+
+- The goal was not only to create a working To-Do app but also to have a real project demonstrating best practices in Angular development.
 ---
 
 ## Features
