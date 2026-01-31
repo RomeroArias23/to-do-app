@@ -26,12 +26,12 @@
 ---
 
 ## Features
-- **Task Listing** – Short explanation
-- **Task Creation & Editing** – Short explanation
-- **Task Status Toggle** – Short explanation
-- **Task Deletion** – Short explanation
-- **Demo & Authentication Simulation** – Short explanation
-- **Error Handling** – Short explanation
+- **Task Listing** – View all tasks in a clean, responsive grid with visual indicators for status and priority.  
+- **Task Creation & Editing** – Add new tasks or edit existing ones with a reactive form and real-time validation.  
+- **Task Status Toggle** – Quickly mark tasks as done or pending directly from the task list.  
+- **Task Deletion** – Remove tasks permanently with a single action, updating the list immediately.  
+- **Demo & Authentication Simulation** – Simulated login/logout system to demonstrate route guards and conditional UI.  
+- **Error Handling** – Centralized HTTP error interception with user-friendly notifications for connectivity or authorization issues.
 
 ---
 
