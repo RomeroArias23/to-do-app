@@ -1,0 +1,41 @@
+/* Global reset for all elements to simplify sizing and spacing */
+* {
+  box-sizing: border-box; /* Includes padding and border in element's total width/height */
+  margin: 0;               /* Removes default margin for all elements */
+  padding: 0;              /* Removes default padding for all elements */
+}
+
+/* Base styling for the <body> element */
+body {
+  /* System font stack for consistent cross-platform typography */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+
+  /* Gradient background for a modern dark theme */
+  background: linear-gradient(135deg, #0F0F0F 0%, #1C1C1C 50%, #0A0A0A 100%);
+
+  min-height: 100vh; /* Ensure body takes full viewport height */
+  color: #fff;       /* Base text color: white */
+  line-height: 1.5;  /* Comfortable line spacing for readability */
+}
+
+/* Custom scrollbar styling for WebKit browsers */
+::-webkit-scrollbar {
+  width: 10px; /* Set scrollbar width */
+}
+
+/* Track of the scrollbar */
+::-webkit-scrollbar-track {
+  background: rgba(28, 28, 28, 0.8); /* Slightly transparent dark background */
+  border-radius: 5px;                 /* Rounded corners for a smooth look */
+}
+
+/* Scrollbar thumb (the draggable handle) */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #5D00FF, #FF2E9A); /* Gradient for visual appeal */
+  border-radius: 5px;                                   /* Rounded edges to match track */
+}
+
+/* Hover state for scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #7A29FF, #FF5EB8); /* Brighten gradient on hover for interaction feedback */
+}

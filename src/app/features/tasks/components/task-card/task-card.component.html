@@ -1,0 +1,37 @@
+<article class="card">
+  <header class="row header">
+    <h3 class="title">
+      <a [routerLink]="['/tasks', task.id]">
+        {{ task.title }}
+      </a>
+    </h3>
+
+    <span
+      class="badge"
+      [class.done]="task.status === 'done'"
+    >
+      {{ task.status }}
+    </span>
+  </header>
+
+  <p class="description" *ngIf="task.description">
+    {{ task.description }}
+  </p>
+
+  <footer class="row actions">
+    <button
+      type="button"
+      (click)="toggle.emit(task.id)"
+    >
+      {{ task.status === 'done' ? 'Mark pending' : 'Mark done' }}
+    </button>
+
+    <button
+      type="button"
+      class="danger"
+      (click)="remove.emit(task.id)"
+    >
+      Delete
+    </button>
+  </footer>
+</article>

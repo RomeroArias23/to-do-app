@@ -1,0 +1,210 @@
+/**
+ * Main container
+ *
+ * Centers the form on the page and limits its width
+ * to keep the layout readable and focused.
+ */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px 20px;
+
+  /**
+   * Page title
+   *
+   * Uses a gradient text effect to emphasize hierarchy
+   * and visually differentiate the form page.
+   */
+  h1 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-weight: 700;
+
+    // Gradient text effect
+    background: linear-gradient(90deg, #FF2E9A, #5D00FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    position: relative;
+    padding-bottom: 12px;
+
+    /**
+     * Decorative underline
+     *
+     * Reinforces visual identity and improves perceived polish.
+     */
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #CFFF04, #FF2E9A);
+      border-radius: 2px;
+    }
+  }
+}
+
+/**
+ * Form layout
+ *
+ * Uses CSS Grid to provide consistent vertical spacing
+ * between form fields without extra wrappers.
+ */
+form {
+  display: grid;
+  gap: 28px;
+}
+
+/**
+ * Label wrapper
+ *
+ * Groups label text and input controls vertically
+ * for better accessibility and readability.
+ */
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/**
+ * Shared input styles
+ *
+ * Applies consistent styling to both input and textarea
+ * elements, including focus states and transitions.
+ */
+input,
+textarea {
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 2px solid rgba(93, 0, 255, 0.2);
+  background: rgba(28, 28, 28, 0.8);
+  color: white;
+  font-size: 15px;
+  transition: all 0.3s ease;
+
+  /**
+   * Focus state
+   *
+   * Improves accessibility by clearly indicating
+   * the active input field.
+   */
+  &:focus {
+    outline: none;
+    border-color: #5D00FF;
+    box-shadow: 0 0 0 3px rgba(93, 0, 255, 0.1);
+    background: rgba(28, 28, 28, 1);
+  }
+
+  /**
+   * Placeholder styling
+   *
+   * Keeps placeholders visible but visually subdued.
+   */
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+/**
+ * Textarea-specific adjustments
+ *
+ * Allows vertical resizing while preserving layout consistency.
+ */
+textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+/**
+ * Validation error message
+ *
+ * Used to display form validation feedback
+ * directly below the affected field.
+ */
+.error {
+  color: #FF2E9A;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 6px;
+  padding-left: 4px;
+}
+
+/**
+ * Action buttons container
+ *
+ * Uses flexbox to align primary and secondary actions
+ * and adapts gracefully to smaller screens.
+ */
+.actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+/**
+ * Base button styles
+ *
+ * Designed for clear affordance, strong visual feedback,
+ * and accessibility across states.
+ */
+button {
+  padding: 16px 32px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #5D00FF, #7A29FF);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease;
+  min-width: 140px;
+  flex: 1;
+
+  /**
+   * Disabled state
+   *
+   * Clearly communicates non-interactive status.
+   */
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+  }
+
+  /**
+   * Hover state
+   *
+   * Provides subtle motion feedback to reinforce interactivity.
+   */
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(93, 0, 255, 0.3);
+  }
+
+  /**
+   * Secondary button variant
+   *
+   * Used for less prominent actions such as "Cancel".
+   */
+  &.secondary {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+
+    &:hover:not(:disabled) {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: #5D00FF;
+      color: #fff;
+    }
+  }
+}

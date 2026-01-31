@@ -1,0 +1,39 @@
+<section class="container" *ngIf="task$ | async as task; else notFound">
+  <header class="header">
+    <h1>{{ task.title }}</h1>
+
+    <span
+      class="badge"
+      [class.done]="task.status === 'done'">
+      {{ task.status }}
+    </span>
+  </header>
+
+  <p class="description" *ngIf="task.description">
+    {{ task.description }}
+  </p>
+
+  <div class="actions">
+    <a
+      class="button"
+      [routerLink]="['/tasks', task.id, 'edit']">
+      Edit
+    </a>
+
+    <a
+      class="button secondary"
+      routerLink="/tasks">
+      Back
+    </a>
+  </div>
+</section>
+
+<ng-template #notFound>
+  <p class="empty">
+    Task not found
+  </p>
+
+  <a class="button" routerLink="/tasks">
+    Back to list
+  </a>
+</ng-template>

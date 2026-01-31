@@ -1,0 +1,39 @@
+<section class="container">
+  <h1>
+    {{ isEditMode ? 'Edit Task' : 'New Task' }}
+  </h1>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <label>
+      Title
+      <input
+        type="text"
+        formControlName="title"
+        placeholder="Task title"
+      />
+    </label>
+
+    <small class="error" *ngIf="form.controls.title.touched && form.controls.title.invalid">
+      Title is required
+    </small>
+
+    <label>
+      Description
+      <textarea
+        rows="4"
+        formControlName="description"
+        placeholder="Optional description">
+      </textarea>
+    </label>
+
+    <div class="actions">
+      <button type="submit" [disabled]="form.invalid">
+        {{ isEditMode ? 'Update' : 'Create' }}
+      </button>
+
+      <button type="button" class="secondary" (click)="cancel()">
+        Cancel
+      </button>
+    </div>
+  </form>
+</section>

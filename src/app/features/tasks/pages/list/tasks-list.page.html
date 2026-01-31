@@ -1,0 +1,48 @@
+<section class="container">
+  <header class="header">
+    <h1>Tasks</h1>
+
+    <div class="actions">
+      <button
+        *ngIf="isLoggedIn()"
+        type="button"
+        routerLink="/tasks/new">
+        + New Task
+      </button>
+
+      <button
+        *ngIf="isLoggedIn()"
+        type="button"
+        (click)="createDemoTask()">
+        + Demo Task
+      </button>
+
+      <button
+        *ngIf="!isLoggedIn()"
+        type="button"
+        (click)="login()">
+        Login
+      </button>
+
+      <button
+        *ngIf="isLoggedIn()"
+        type="button"
+        (click)="logout()">
+        Logout
+      </button>
+    </div>
+  </header>
+
+  <p *ngIf="(tasks$ | async)?.length === 0">
+    No tasks yet.
+  </p>
+
+  <div class="list">
+    <app-task-card
+      *ngFor="let t of (tasks$ | async); trackBy: trackById"
+      [task]="t"
+      (toggle)="onToggle($event)"
+      (remove)="onDelete($event)"
+    />
+  </div>
+</section>
